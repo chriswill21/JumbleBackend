@@ -115,7 +115,10 @@ def get_data(data_type):
     x = pickle.load(open(data_type, "rb"))
     return x
 
-def iterations_for_making_dataset(user_mult):
+user_count = 0
+
+def iterations_for_making_dataset(user_mult, distributions):
+    global user_count
     index_list = [i for i in range(37)]
     # shuffle(index_list)
 
@@ -135,19 +138,22 @@ def iterations_for_making_dataset(user_mult):
         for key in dict.keys():
 
             entry = (user_mult + i, key, dict[key])
+            if entry[0] > user_count:
+                user_count = entry[0]
             result.append(entry)
         if i == 0 and user_mult == 0:
             print(result)
 
     return result
 
-def make_dataset():
+def make_dataset(new_user_data, distributions):
+    global user_count
     train_data = []
     validation_data = []
     # iterate users
     for i in range(300):
         # got back is 100 users of the same distribution
-        got_back = iterations_for_making_dataset(100 * i)
+        got_back = iterations_for_making_dataset(100 * i, distributions)
         shuffle(got_back)
 
         # remove data (equivalent of a cell in the UxV matrix) and add to use for validation data
@@ -155,22 +161,29 @@ def make_dataset():
         validation_data.append(got_back.pop(0))
         train_data += got_back
         # validation_data.append(got_back[0])
+    for data_point in new_user_data:
+        new_user_category = data_point[0]
+        new_user_rating = data_point[1]
+
+        train_data.append((user_count+1,new_user_category, new_user_rating))
     pickle.dump(train_data, open("train_data", "wb"))
     pickle.dump(validation_data, open("validation_data", "wb"))
 
-def train_model():
-    make_dataset()
+def train_model(new_user_data, distributions):
+    global user_count
+    make_dataset(new_user_data, distributions)
     train_data = get_data("train_data")
     validation_data = get_data("validation_data")
 
-    f = open("model_result_details.txt", "w+")
-    print(recommender_system.mf_als(train_data, validation_data,lam=1, max_iter=30, k=20), file=f) #lam=0.7, max_iter=200, k=15), file=f)
-    # recommender_system.compute_and_save_large_model(train_data, validation_data)
-    f.close()
+    # f = open("model_result_details.txt", "w+")
+    # print(recommender_system.mf_als(train_data, validation_data,lam=1, max_iter=30, k=20), file=f) #lam=0.7, max_iter=200, k=15), file=f)
+    recommender_system.compute_and_save_large_model(train_data, validation_data)
+    # f.close()
 
 
 
 def test_model():
+    global user_count
     x = recommender_system.load_model()
 
     data_validate = []
@@ -186,10 +199,24 @@ def test_model():
     f.close()
 
 def get_rankings():
+    global user_count
     #need to keep track of the row that the user was added to for the data
     # then use this and for this row in the U matrix of the model and for every job, compute the rating
     # map this rating to the job, sort them, and return the list of sorted job categories
-    pass
+    model = recommender_system.load_model()
+    ranking_dict = {}
+    data = [(0, 26, 5), (0, 9, 6), (0, 28, 3), (0, 13, 6), (0, 30, 12), (0, 3, 2), (0, 6, 11), (0, 2, 9), (0, 4, 6), (0, 36, 1), (0, 12, 4), (0, 33, 4), (0, 31, 5), (0, 17, 5), (0, 27, 3), (0, 16, 3), (0, 21, 4), (0, 10, 1), (0, 1, 4), (0, 35, 4), (0, 14, 1), (0, 23, 1)]
+
+    for i in range(37):
+        ranking_dict[i] = recommender_system.pred((user_count+1, i, None), model)
+
+    return recommender_system.rmse(data, model)
+    rankings = sorted(ranking_dict, key=lambda k: ranking_dict[k])
+
+    return [rankings, ranking_dict, user_count+1]
+
+
+
 
 # gaussian_to_distributions()
 # distributions = get_data("distributions")
@@ -201,10 +228,12 @@ def get_rankings():
 
 
 distributions = None
-def main():
+def main(new_user):
+    global user_count
+    user_count = 0
     distributions = get_data("distributions")
-    train_model()
-    get_rankings()
+    train_model(new_user, distributions)
+    return get_rankings()
 
 
 if __name__ == "__main__":

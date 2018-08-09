@@ -110,30 +110,35 @@ def train_tagging_model():
     # ---------------------------------------------------------------------------------
 
 
-def predict_job_category():
+def predict_job_category(job_description):
 
     model = joblib.load("svm_tagging_model.pkl")
 
-    job_post_data_total = pd.read_csv("reed_uk.csv")
-    job_post_data_trimmed = job_post_data_total.sample(frac=.5)
-    # divide between training and test data
-    max_num_words_in_list = 375172 * 1 / 4
 
-    col = ['category', 'job_description']
-    job_post_data = job_post_data_trimmed[col]
-    job_post_data['category_id'], uniques = job_post_data['category'].factorize()
+    # job_post_data_total = pd.read_csv("reed_uk.csv")
+    # job_post_data_trimmed = job_post_data_total.sample(frac=.5)
+    # # divide between training and test data
+    # max_num_words_in_list = 375172 * 1 / 4
+    #
+    # col = ['category', 'job_description']
+    # job_post_data = job_post_data_trimmed[col]
+    # job_post_data['category_id'], uniques = job_post_data['category'].factorize()
+    #
+    # posts = job_post_data["job_description"]
+    # tags = job_post_data["category"]
 
-    posts = job_post_data["job_description"]
-    tags = job_post_data["category"]
+
+    data_to_predict = np.array([job_description])
 
     fitted_feature_matrix = joblib.load("svm_tokenizer.pickle")
-    features = fitted_feature_matrix.transform(posts).toarray()
-    labels = tags
-    features.shape
+    # features = fitted_feature_matrix.transform(posts).toarray()
+    features = fitted_feature_matrix.transform(data_to_predict).toarray()
 
-    job_post_data_trimmed.to_csv("data_halved", sep='\t')
+    # labels = tags
+    # features.shape
+    # X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(features, labels, job_post_data.index, test_size=0.33, random_state=0)
 
-    X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(features, labels, job_post_data.index, test_size=0.33, random_state=0)
+    # return model.score(X_test, y_test)
 
-    return model.score(X_test, y_test)
+    return model.predict(features)
 
