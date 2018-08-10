@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.externals import joblib
 from random import shuffle
 import recommender_system
-from collections import deque
+from collections import deque 
 
 # get dictionary of all jobs and map them to index
 data = []
