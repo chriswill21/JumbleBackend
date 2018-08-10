@@ -7,7 +7,6 @@ from sklearn.svm import LinearSVC
 from sklearn.model_selection import cross_val_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.externals import joblib
 from random import shuffle
