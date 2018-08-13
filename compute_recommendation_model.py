@@ -199,10 +199,9 @@ def get_rankings():
     for i in range(37):
         ranking_dict[i] = recommender_system.pred((user_count+1, i, None), model)
 
-    return recommender_system.rmse(data, model)
     rankings = sorted(ranking_dict, key=lambda k: ranking_dict[k])
 
-    return [rankings, ranking_dict, user_count+1]
+    return rankings
 
 
 
