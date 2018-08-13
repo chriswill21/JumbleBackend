@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4ee3156-f2e4-43fd-adab-2fad42f8ca57" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ALSmodel" beforeDir="false" afterPath="$PROJECT_DIR$/ALSmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_recommendation_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_recommendation_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recommender_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train_data" beforeDir="false" afterPath="$PROJECT_DIR$/train_data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation_data" beforeDir="false" afterPath="$PROJECT_DIR$/validation_data" afterDir="false" />
@@ -37,14 +39,14 @@
         <counts>
           <entry key="Python Console" value="610" />
           <entry key="dummy" value="3" />
-          <entry key="py" value="1169" />
+          <entry key="py" value="1614" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="1779" />
+          <entry key="Python" value="2224" />
         </counts>
       </usages-collector>
     </session>
@@ -63,20 +65,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="315">
               <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="206" selection-start-line="206" selection-end-line="206" />
+            <state relative-caret-position="463">
+              <caret line="252" column="2" selection-start-line="252" selection-start-column="2" selection-end-line="252" selection-end-column="2" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
-                <marker date="1534178909836" expanded="true" signature="7560:7565" ph="..." />
+                <marker date="1534184822410" expanded="true" signature="8182:8187" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender_system.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+            <state relative-caret-position="376">
+              <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -133,6 +135,9 @@
       <find>matp</find>
       <find>seab</find>
       <find>m</find>
+      <find>25</find>
+      <find>24</find>
+      <find>dict</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,12 +151,12 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/job_tagging_svm.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/compute_recommendation_model.py" />
         <option value="$PROJECT_DIR$/recommender_system.py" />
+        <option value="$PROJECT_DIR$/compute_recommendation_model.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="145" />
     <option name="width" value="1680" />
     <option name="height" value="947" />
@@ -205,7 +210,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.compute_recommendation_model">
+    <configuration name="compute_recommendation_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="JumbleJobRankingBackend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compute_recommendation_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="JumbleJobRankingBackend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -227,8 +253,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.compute_recommendation_model" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.compute_recommendation_model" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -247,19 +278,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="145" width="1680" height="947" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="947" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Python Console" visible="true" weight="0.32982457" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32982457" />
       <window_info anchor="bottom" id="Terminal" weight="0.32982457" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32982457" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32982457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,30 +336,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="206" selection-start-line="206" selection-end-line="206" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-            <marker date="1534178909836" expanded="true" signature="7560:7565" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="315">
           <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender_system.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+        <state relative-caret-position="376">
+          <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="252" column="2" selection-start-line="252" selection-start-column="2" selection-end-line="252" selection-end-column="2" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+            <marker date="1534184822410" expanded="true" signature="8182:8187" ph="..." />
           </folding>
         </state>
       </provider>

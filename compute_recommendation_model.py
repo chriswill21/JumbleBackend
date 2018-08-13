@@ -137,26 +137,47 @@ def iterations_for_making_dataset(user_mult, distributions):
 
 def make_dataset(new_user_data, distributions):
     global user_count
-    train_data = []
-    validation_data = []
-    # iterate users
-    for i in range(300):
-        # got back is 100 users of the same distribution
-        got_back = iterations_for_making_dataset(100 * i, distributions)
-        shuffle(got_back)
+    # train_data = []
+    # validation_data = []
+    # # iterate users
+    # for i in range(300):
+    #     # got back is 100 users of the same distribution
+    #     got_back = iterations_for_making_dataset(100 * i, distributions)
+    #     shuffle(got_back)
+    #
+    #     # remove data (equivalent of a cell in the UxV matrix) and add to use for validation data
+    #
+    #     validation_data.append(got_back.pop(0))
+    #     train_data += got_back
+    #     # validation_data.append(got_back[0])
+    #
+    # pickle.dump(train_data, open("og_train_data", "wb"))
+    #
+    # for data_point in new_user_data:
+    #     new_user_category = data_point[0]
+    #     new_user_rating = data_point[1]
+    #
+    #     train_data.append((user_count+1,new_user_category, new_user_rating))
+    # pickle.dump(train_data, open("train_data", "wb"))
+    # pickle.dump(validation_data, open("validation_data", "wb"))
 
-        # remove data (equivalent of a cell in the UxV matrix) and add to use for validation data
+    train_data = get_data("og_train_data")
 
-        validation_data.append(got_back.pop(0))
-        train_data += got_back
-        # validation_data.append(got_back[0])
+    # find the index to give the new user in the data matrix
+    max = 0
+    for i in train_data:
+        if i[0] > max:
+            max = i[0]
+    user_count = max
+
+
+    # add user's data to train data
     for data_point in new_user_data:
         new_user_category = data_point[0]
         new_user_rating = data_point[1]
+        train_data.append((user_count + 1, new_user_category, new_user_rating))
 
-        train_data.append((user_count+1,new_user_category, new_user_rating))
     pickle.dump(train_data, open("train_data", "wb"))
-    pickle.dump(validation_data, open("validation_data", "wb"))
 
 def train_model(new_user_data, distributions):
     global user_count
@@ -194,7 +215,8 @@ def get_rankings():
     # map this rating to the job, sort them, and return the list of sorted job categories
     model = recommender_system.load_model()
     ranking_dict = {}
-    data = [(0, 26, 5), (0, 9, 6), (0, 28, 3), (0, 13, 6), (0, 30, 12), (0, 3, 2), (0, 6, 11), (0, 2, 9), (0, 4, 6), (0, 36, 1), (0, 12, 4), (0, 33, 4), (0, 31, 5), (0, 17, 5), (0, 27, 3), (0, 16, 3), (0, 21, 4), (0, 10, 1), (0, 1, 4), (0, 35, 4), (0, 14, 1), (0, 23, 1)]
+    data = [(0, 10, 3), (0, 36, 2), (0, 3, 1), (0, 9, 3), (0, 14, 1), (0, 25, 5), (0, 24, 3), (0, 19, 5), (0, 2, 4), (0, 15, 6), (0, 28, 2), (0, 18, 4), (0, 33, 4), (0, 12, 1), (0, 11, 2), (0, 7, 4), (0, 27, 2), (0, 23, 5), (0, 30, 5), (0, 21, 4), (0, 13, 3), (0, 29, 4), (0, 16, 4), (0, 8, 2), (0, 31, 2), (0, 22, 3), (0, 26, 3), (0, 32, 3), (0, 34, 3), (0, 4, 1), (0, 20, 2), (0, 17, 1), (0, 1, 1), (0, 0, 1), (0, 5, 1)]
+    # return recommender_system.rmse(data, model)
 
     for i in range(37):
         ranking_dict[i] = recommender_system.pred((user_count+1, i, None), model)
@@ -225,4 +247,7 @@ def main(new_user):
 
 
 if __name__ == "__main__":
-    main()
+    main([(0, 10, 3), (0, 36, 2), (0, 3, 1), (0, 9, 3), (0, 14, 1), (0, 25, 5), (0, 24, 3), (0, 19, 5), (0, 2, 4), (0, 15, 6), (0, 28, 2), (0, 18, 4), (0, 33, 4), (0, 12, 1), (0, 11, 2), (0, 7, 4), (0, 27, 2), (0, 23, 5), (0, 30, 5), (0, 21, 4), (0, 13, 3), (0, 29, 4), (0, 16, 4), (0, 8, 2), (0, 31, 2), (0, 22, 3), (0, 26, 3), (0, 32, 3), (0, 34, 3), (0, 4, 1), (0, 20, 2), (0, 17, 1), (0, 1, 1), (0, 0, 1), (0, 5, 1)])
+    print(get_rankings())
+
+# [[0, 10, 3], [0, 36, 2], [0, 3, 1], [0, 9, 3], [0, 14, 1], [0, 25, 5], [0, 24, 3], [0, 19, 5], [0, 2, 4], [0, 15, 6], [0, 28, 2], [0, 18, 4], [0, 33, 4], [0, 12, 1], [0, 11, 2], [0, 7, 4], [0, 27, 2], [0, 23, 5], [0, 30, 5], [0, 21, 4], [0, 13, 3], [0, 29, 4], [0, 16, 4], [0, 8, 2], [0, 31, 2], [0, 22, 3], [0, 26, 3], [0, 32, 3], [0, 34, 3], [0, 4, 1], [0, 20, 2], [0, 17, 1], [0, 1, 1], [0, 0, 1], [0, 5, 1]]
