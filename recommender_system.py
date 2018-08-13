@@ -291,7 +291,7 @@ def compute_and_save_large_model(train_data, validation_data):
     # data = load_ratings_data()
     print('Running ALS on the Job data for 30 iterations.')
     # x = mf_als(data, None, lam=1.0, max_iter=20, k=10)
-    x = mf_als(train_data, validation_data, lam=1, max_iter=2, k=20)
+    x = mf_als(train_data, validation_data, lam=1, max_iter=5, k=20)
     print('Saving the model')
     save_model(x)
 

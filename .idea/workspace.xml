@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4ee3156-f2e4-43fd-adab-2fad42f8ca57" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALSmodel" beforeDir="false" afterPath="$PROJECT_DIR$/ALSmodel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recommender_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,14 +37,14 @@
         <counts>
           <entry key="Python Console" value="610" />
           <entry key="dummy" value="3" />
-          <entry key="py" value="1616" />
+          <entry key="py" value="1618" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="2226" />
+          <entry key="Python" value="2228" />
         </counts>
       </usages-collector>
     </session>
