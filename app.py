@@ -24,17 +24,20 @@ def job_recommendation(new_user_data_string):
     num_builder = ""
     data_point = []
     start = False
-    for i in list(new_user_data_string):
-        if i == "(":
+    list_data = list(new_user_data_string)
+    list_data.pop(0)
+    list_data.pop(-1)
+    for i in list_data:
+        if i == "[":
             start = True
         else:
             if start:
-                if i != " " and i != "," and i != ")":
+                if i != " " and i != "," and i != "]":
                     num_builder += i
                 elif i == ",":
                     data_point.append(int(num_builder))
                     num_builder = ""
-                elif i == ")":
+                elif i == "]":
 
                     data_point.append(int(num_builder))
                     new_user_data.append(tuple(data_point))
