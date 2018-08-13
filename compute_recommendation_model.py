@@ -1,14 +1,4 @@
-import scipy
 import numpy as np
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import LinearSVC
-from sklearn.model_selection import cross_val_score
-from sklearn.feature_extraction.text import TfidfVectorizer
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.externals import joblib
 from random import shuffle
 import recommender_system
 from collections import deque
