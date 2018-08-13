@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4ee3156-f2e4-43fd-adab-2fad42f8ca57" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALSmodel" beforeDir="false" afterPath="$PROJECT_DIR$/ALSmodel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommender_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_recommendation_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_recommendation_model.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,14 +67,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="219" selection-start-line="219" selection-end-line="219" />
+            <state relative-caret-position="211">
+              <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
-                <marker date="1534185086431" expanded="true" signature="8182:8187" ph="..." />
+                <marker date="1534186061140" expanded="true" signature="8182:8187" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender_system.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
+            <state relative-caret-position="1188">
               <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -149,8 +147,8 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/job_tagging_svm.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/compute_recommendation_model.py" />
         <option value="$PROJECT_DIR$/recommender_system.py" />
+        <option value="$PROJECT_DIR$/compute_recommendation_model.py" />
       </list>
     </option>
   </component>
@@ -341,23 +339,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
+    <entry file="file://$PROJECT_DIR$/recommender_system.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
+        <state relative-caret-position="1188">
+          <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
           <folding>
-            <element signature="e#1#19#0" expanded="true" />
-            <marker date="1534185086431" expanded="true" signature="8182:8187" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recommender_system.py">
+    <entry file="file://$PROJECT_DIR$/compute_recommendation_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
+        <state relative-caret-position="211">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="true" />
+            <marker date="1534186061140" expanded="true" signature="8182:8187" ph="..." />
           </folding>
         </state>
       </provider>
