@@ -216,7 +216,7 @@ def get_rankings():
     model = recommender_system.load_model()
     ranking_dict = {}
     data = [(0, 10, 3), (0, 36, 2), (0, 3, 1), (0, 9, 3), (0, 14, 1), (0, 25, 5), (0, 24, 3), (0, 19, 5), (0, 2, 4), (0, 15, 6), (0, 28, 2), (0, 18, 4), (0, 33, 4), (0, 12, 1), (0, 11, 2), (0, 7, 4), (0, 27, 2), (0, 23, 5), (0, 30, 5), (0, 21, 4), (0, 13, 3), (0, 29, 4), (0, 16, 4), (0, 8, 2), (0, 31, 2), (0, 22, 3), (0, 26, 3), (0, 32, 3), (0, 34, 3), (0, 4, 1), (0, 20, 2), (0, 17, 1), (0, 1, 1), (0, 0, 1), (0, 5, 1)]
-    # return recommender_system.rmse(data, model)
+    return recommender_system.rmse(data, model)
 
     for i in range(37):
         ranking_dict[i] = recommender_system.pred((user_count+1, i, None), model)
