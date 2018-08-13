@@ -85,14 +85,16 @@ def mf_als(data_train, data_validate, k=2, lam=0.02, max_iter=100, verbose=False
         update_U(data_train, vs_from_u, x, k, lam)
         update_V(data_train, us_from_v, x, k, lam)
         if verbose:
-            print('train rmse', rmse(data_train, x), 'validate rmse', data_validate and rmse(data_validate, x))
+            pass
+            # print('train rmse', rmse(data_train, x), 'validate rmse', data_validate and rmse(data_validate, x))
         if data_validate == None:  # code is slower, print out progress
-            print("Iteration {} finished. Total Elapsed Time: {:.2f}".format(i + 1, time.time() - start_time))
+            pass
+            # print("Iteration {} finished. Total Elapsed Time: {:.2f}".format(i + 1, time.time() - start_time))
     # The root mean square errors measured on validate set
-    if data_validate != None:
-        f = open("model_validation_results_score.txt", "w+")
-        print('validate rmse=', rmse(data_validate, x), file=f)
-        f.close()
+    # if data_validate != None:
+    #     f = open("model_validation_results_score.txt", "w+")
+        # print('validate rmse=', rmse(data_validate, x), file=f)
+        # f.close()
     return x
 
 
@@ -110,16 +112,16 @@ def ridge_analytic(X, Y, lam):
     return th.reshape((k, 1)), float(th_0)
 
 
-# Example from lab handout
-Z = np.array([[1], [1], [5], [1], [5], [5], [1]])
-b_v = np.array([[3], [3], [3], [3], [3], [5], [1]])
-B = np.array([[1, 10], [1, 10], [10, 1], [1, 10], [10, 1], [5, 5], [5, 5]])
-# Solution with offsets, using ridge_analytic provided in code file
-u_a, b_u_a = ridge_analytic(B, (Z - b_v), 1)
-print('With offsets', u_a, b_u_a)
-# Solution using previous model, with no offsets
-u_a_no_b = np.dot(np.linalg.inv(np.dot(B.T, B) + 1 * np.identity(2)), np.dot(B.T, Z))
-print('With no offsets', u_a_no_b)
+# # Example from lab handout
+# Z = np.array([[1], [1], [5], [1], [5], [5], [1]])
+# b_v = np.array([[3], [3], [3], [3], [3], [5], [1]])
+# B = np.array([[1, 10], [1, 10], [10, 1], [1, 10], [10, 1], [5, 5], [5, 5]])
+# # Solution with offsets, using ridge_analytic provided in code file
+# u_a, b_u_a = ridge_analytic(B, (Z - b_v), 1)
+# print('With offsets', u_a, b_u_a)
+# # Solution using previous model, with no offsets
+# u_a_no_b = np.dot(np.linalg.inv(np.dot(B.T, B) + 1 * np.identity(2)), np.dot(B.T, Z))
+# print('With no offsets', u_a_no_b)
 
 
 def update_U(data, vs_from_u, x, k, lam):
@@ -142,7 +144,7 @@ def update_V(data, us_from_v, x, k, lam):
 
 
 # Simple test case
-print("This is what I want: ", mf_als(ratings_small, ratings_small,lam=0.01, max_iter=10, k=2))
+# print("This is what I want: ", mf_als(ratings_small, ratings_small,lam=0.01, max_iter=10, k=2))
 
 # The SGD outer loop
 def mf_sgd(data_train, data_validate, step_size_fn, k=2, lam=0.02, max_iter=100, verbose=False):
@@ -178,9 +180,9 @@ def sgd_step(data, x, lam, step):
 
 
 # Simple validate case
-print("SGD")
-mf_sgd(ratings_small, ratings_small, step_size_fn=lambda i: 0.1,
-       lam=0.01, max_iter=1000, k=2)
+# print("SGD")
+# mf_sgd(ratings_small, ratings_small, step_size_fn=lambda i: 0.1,
+#        lam=0.01, max_iter=1000, k=2)
 
 
 def load_ratings_data_small(path_data='ratings.csv'):
